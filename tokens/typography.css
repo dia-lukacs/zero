@@ -1,18 +1,20 @@
 /* Text styles
- * Built from primitives only. Each style = family + size + weight.
- * Line height and letter spacing are not defined yet.
+ * Built from primitives only. Each style = family + size + weight + line height.
+ * Letter spacing is not defined yet.
  */
 
 :root {
   /* Headings: Inter Medium */
   --text-heading-family: var(--font-family-inter);
   --text-heading-weight: var(--font-weight-medium);
+  --text-heading-line-height: var(--line-height-120);
   --text-heading-large-size: var(--font-size-48);
   --text-heading-medium-size: var(--font-size-40);
   --text-heading-small-size: var(--font-size-32);
 
   /* Body: Inter, Regular or Medium */
   --text-body-family: var(--font-family-inter);
+  --text-body-line-height: var(--line-height-140);
   --text-body-weight-regular: var(--font-weight-regular);
   --text-body-weight-medium: var(--font-weight-medium);
   --text-body-lead-size: var(--font-size-18);
@@ -22,6 +24,7 @@
   /* Caption: DM Mono Regular */
   --text-caption-family: var(--font-family-dm-mono);
   --text-caption-weight: var(--font-weight-regular);
+  --text-caption-line-height: var(--line-height-140);
   --text-caption-default-size: var(--font-size-14);
   --text-caption-small-size: var(--font-size-12);
 }

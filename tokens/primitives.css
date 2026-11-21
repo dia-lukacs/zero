@@ -40,6 +40,10 @@
   --font-size-40: 40px;
   --font-size-48: 48px;
 
+  /* Line heights (unitless, relative to font size) */
+  --line-height-120: 1.2;
+  --line-height-140: 1.4;
+
   /* Spacing */
   --space-0: 0px;
   --space-2: 2px;
