@@ -83,7 +83,7 @@ Do not:
 Every piece of text uses one text style. Each style is a single token holding the font, weight, size and line height together, so apply it as a whole with the `font` property, for example `font: var(--text-headline-large)`. Do not set the font family, weight, size or line height separately.
 
 Title (`--text-title`):
-- The one huge word at the top of the page, set so its letters reach both edges of the screen. Use it once per page, for the page's name only, and never for headings or running text.
+- The one huge word at the top of the page, set so its letters reach both edges of the screen. Use it once per page, for the page's name only, and never for headings or running text. The English title, set small at the middle left of the page, uses `--text-body-default-medium`.
 
 Headlines (`--text-headline-large`, `--text-headline-medium` and `--text-headline-small`):
 - For titles and section headings. Pick the size by how important the heading is: large for the main title of a page, medium for major sections, small for sub-sections.
