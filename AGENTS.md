@@ -107,6 +107,32 @@ Do not:
 - Use bold or italic to create emphasis. Use the `medium` body style instead.
 - Add letter spacing. All styles are set without it.
 
+## Layout grid
+
+The page grid comes from the diploma book: equal columns, and every cell is a square, because each row is as tall as a column is wide. It has four columns on a tablet and bigger, and two columns on a phone, where four would be too narrow to use. The space around and between the columns also grows as the screen gets bigger.
+
+Tokens:
+- `--grid-columns`: how many columns there are: two on a phone, four on a tablet and bigger.
+- `--grid-margin`: the space between the page edge and the first and last column. It grows as the screen gets bigger.
+- `--grid-gap`: the space between columns and between rows. It also grows as the screen gets bigger.
+- `--grid-column-start-1`, `--grid-column-start-2`, `--grid-column-start-3` and `--grid-column-start-4`: where each column starts, measured from the left edge of the page. They are for text or objects placed over the page by hand. Columns three and four exist only where the grid has four columns.
+- `--grid-column-start-last`: where the last column starts, whatever the number of columns is. Use it for things that sit at the right, so they stay on the page on a phone.
+- `--grid-column-width`: how wide one column is.
+- The margin and the gap are built from the spacing scale: `--space-16` and `--space-8` on a phone, `--space-24` and `--space-16` on a tablet, and `--space-32` and `--space-24` on a laptop or bigger.
+
+How to use it:
+- Put content in the grid frame and the grid. Each item says where it starts and how many columns it covers. Items are placed on whole columns and whole square rows.
+- For text or objects placed over the page, start them at one of the column start tokens, so their left edge sits on a column line.
+- Keep text inside its columns. On a phone, a block that is two columns wide on a tablet becomes one column wide.
+- The page title is the one exception: its letters run edge to edge, across the margins.
+- Press G while building to see the columns and square cells over the page. Adding the grid switch to the address shows it from the start.
+
+Do not:
+- Use any number of columns other than two on a phone and four on a tablet and bigger.
+- Place content at a position that is not on a column line.
+- Use fixed pixel widths to line things up. Use the grid tokens, so everything follows the screen.
+- Make a cell that is not square, unless it deliberately covers several whole cells.
+
 ## Date picker
 
 The date picker is how a visitor moves through the years of the story. It shows a year and a month, written out, as two side-by-side tubes seen from the side: the selected value faces the visitor, and the values before and after curve away above and below it, smaller and fainter. Use it to choose a point in time, and never for anything that is not a date.

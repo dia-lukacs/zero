@@ -1,0 +1,31 @@
+/* Layout tokens
+ * The page grid, taken from the diploma book: equal columns whose cells are
+ * square. It has 4 columns on a tablet and bigger, and 2 on a phone, where 4
+ * would be too narrow to use. The space around and between the columns grows
+ * with the screen.
+ * Built from the spacing scale only.
+ */
+
+:root {
+  /* Phone: 2 columns, tight. */
+  --grid-columns: 2;
+  --grid-margin: var(--space-16); /* space at the left and right edge of the page */
+  --grid-gap: var(--space-8); /* space between columns, and between rows */
+}
+
+/* Tablet: the full 4 columns. */
+@media (min-width: 640px) {
+  :root {
+    --grid-columns: 4;
+    --grid-margin: var(--space-24);
+    --grid-gap: var(--space-16);
+  }
+}
+
+/* Laptop and bigger */
+@media (min-width: 1024px) {
+  :root {
+    --grid-margin: var(--space-32);
+    --grid-gap: var(--space-24);
+  }
+}

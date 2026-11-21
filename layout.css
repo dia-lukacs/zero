@@ -1,0 +1,76 @@
+/* Page grid
+ * Columns with square cells, from the diploma book: 4 columns on a tablet and
+ * bigger, 2 on a phone (the number is set in the layout tokens).
+ *
+ * Use it like this:
+ *   <div class="grid-frame">
+ *     <div class="grid">
+ *       <div style="--start: 1; --span: 2">...</div>   two columns wide, from column 1
+ *       <div style="--start: 3">...</div>              one column, at column 3
+ *     </div>
+ *   </div>
+ * --start is the column an item begins in. --span is how many columns it covers.
+ * Rows are as tall as a column is wide, so every cell is a square.
+ */
+
+/* The frame sets the edges: the page margin on the left and right. It is also
+   the container the square rows are measured against. */
+.grid-frame {
+  container-type: inline-size;
+  padding-inline: var(--grid-margin);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  gap: var(--grid-gap);
+  /* One column's width: the frame's width, minus the gaps, shared by the columns. */
+  --grid-cell: calc((100cqi - (var(--grid-columns) - 1) * var(--grid-gap)) / var(--grid-columns));
+  grid-auto-rows: var(--grid-cell);
+}
+
+.grid > * {
+  grid-column: var(--start, auto) / span var(--span, 1);
+  grid-row: var(--row, auto) / span var(--rows, 1);
+}
+
+/* Helper for things placed on the grid by hand, such as text laid over the page:
+   where column N starts, measured from the left edge of the page. Use it as
+   left: var(--grid-column-start-1) and so on. */
+:root {
+  --grid-column-width: calc(
+    (100% - 2 * var(--grid-margin) - (var(--grid-columns) - 1) * var(--grid-gap)) / var(--grid-columns)
+  );
+  --grid-column-start-1: var(--grid-margin);
+  --grid-column-start-2: calc(var(--grid-margin) + (var(--grid-column-width) + var(--grid-gap)));
+  --grid-column-start-3: calc(var(--grid-margin) + 2 * (var(--grid-column-width) + var(--grid-gap)));
+  --grid-column-start-4: calc(var(--grid-margin) + 3 * (var(--grid-column-width) + var(--grid-gap)));
+  /* The last column, whatever the number of columns is: the fourth on a tablet
+     and bigger, the second on a phone. Use this for things that sit at the right. */
+  --grid-column-start-last: calc(
+    var(--grid-margin) + (var(--grid-columns) - 1) * (var(--grid-column-width) + var(--grid-gap))
+  );
+}
+
+/* The grid overlay: press G to see the columns and the square cells on top of
+   the page. For checking the layout while building. */
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 9998;
+  display: none;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  gap: var(--grid-gap);
+  align-content: start;
+  padding-inline: var(--grid-margin);
+  pointer-events: none;
+}
+
+html[data-show-grid] .grid-overlay {
+  display: grid;
+}
+
+.grid-overlay > span {
+  outline: 1px solid var(--color-coral);
+  background: color-mix(in srgb, var(--color-coral) 12%, transparent);
+}

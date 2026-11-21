@@ -31,35 +31,42 @@ body {
   mix-blend-mode: multiply;
 }
 
-/* The English title sits at the middle left of the page. */
+/* The English title sits at the middle left of the page, starting at the first
+ * grid column. */
 .page__subtitle {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: var(--grid-column-start-1);
   transform: translateY(-50%);
   margin: 0;
-  padding-inline: var(--space-24);
-  max-width: 14em;
+  /* Two columns wide on a tablet and bigger, one column on a phone, so the text
+     never crosses a column line. (640px is where the grid goes from 2 to 4 columns.) */
+  width: min(14em, var(--grid-column-width));
   font: var(--text-body-default-medium);
   color: var(--color-text-primary-on-light);
 }
 
+@media (min-width: 640px) {
+  .page__subtitle {
+    width: min(14em, calc(2 * var(--grid-column-width) + var(--grid-gap)));
+  }
+}
+
 /* A short line of body text on the right, a little lower than the English
- * title on the left, so the two don't line up. */
+ * title on the left, so the two don't line up. It sits in the last column. */
 .page__body {
   position: absolute;
   top: 58%;
-  right: 0;
+  left: var(--grid-column-start-last);
   margin: 0;
-  padding-inline: var(--space-24);
-  max-width: 10em;
+  width: min(10em, var(--grid-column-width));
   font: var(--text-body-lead-regular);
   color: var(--color-text-primary-on-light);
 }
 
-/* Below the first screen: the date picker, off to the left. */
+/* Below the first screen: the date picker, off to the left, at the page margin. */
 .date-section {
-  padding: var(--space-96) var(--space-24);
+  padding: var(--space-96) var(--grid-margin);
 }
 
 /* The dark version of the picker, on the dark background. */
