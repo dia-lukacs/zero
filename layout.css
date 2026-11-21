@@ -37,9 +37,10 @@
 /* Helpers for things placed on the grid by hand, such as text laid over the page:
    where column N starts, measured from the left edge of the page. Use them as
    left: var(--grid-column-start-1) and so on.
-   These are working-out formulas, not design decisions, so they sit on the page
-   and not with the layout tokens. The numbers behind them are in the layout tokens. */
-body {
+   These are working-out formulas, not design decisions, so they are set on the
+   page's own class and not on the root, where Grum would list them as tokens.
+   The numbers behind them are in the layout tokens. */
+.page {
   --grid-column-width: calc(
     (100% - 2 * var(--grid-margin) - (var(--grid-columns) - 1) * var(--grid-gap)) / var(--grid-columns)
   );
