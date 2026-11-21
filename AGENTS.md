@@ -112,7 +112,7 @@ Do not:
 The page grid comes from the diploma book: equal columns, and every cell is a square, because each row is as tall as a column is wide. It has four columns on a tablet and bigger, and two columns on a phone, where four would be too narrow to use. The space around and between the columns also grows as the screen gets bigger.
 
 Tokens. Every screen size has its own token, so each value is written down:
-- Columns: `--grid-columns-phone` (two) and `--grid-columns-tablet` (four, also used on laptops and bigger).
+- Columns: `--grid-columns-phone` (two, on phones) and `--grid-columns-tablet-up` (four, from tablet width up: tablets, laptops and bigger screens).
 - Page margin, the space between the page edge and the first and last column: `--grid-margin-phone`, `--grid-margin-tablet` and `--grid-margin-laptop`. It grows as the screen gets bigger.
 - Gap, the space between columns and between rows: `--grid-gap-phone`, `--grid-gap-tablet` and `--grid-gap-laptop`. It also grows as the screen gets bigger.
 - `--grid-columns`, `--grid-margin` and `--grid-gap` are the ones the page actually uses. They pick the right size for the screen, so use these in layout code and not the sized ones.

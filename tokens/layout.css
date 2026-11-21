@@ -13,7 +13,7 @@
 :root {
   /* Columns */
   --grid-columns-phone: 2;
-  --grid-columns-tablet: 4;
+  --grid-columns-tablet-up: 4; /* from tablet width up: tablets, laptops and bigger screens */
 
   /* Space at the left and right edge of the page */
   --grid-margin-phone: var(--space-16);
@@ -34,7 +34,7 @@
 /* Tablet: the full 4 columns. */
 @media (min-width: 640px) {
   :root {
-    --grid-columns: var(--grid-columns-tablet);
+    --grid-columns: var(--grid-columns-tablet-up);
     --grid-margin: var(--grid-margin-tablet);
     --grid-gap: var(--grid-gap-tablet);
   }
