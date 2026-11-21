@@ -1,0 +1,55 @@
+/* Primitive tokens
+ * Raw scales only. Name = value in px. Semantic tokens (e.g. --space-card-padding)
+ * should reference these, never hardcode values.
+ * Base unit: 8px. Extra half/sub steps: 0, 2, 4, 12, 20.
+ */
+
+:root {
+  /* Brand colors */
+  --color-powder: #fbfaf4;
+  --color-alabaster: #eaebe4;
+  --color-night: #111111;
+  --color-violet: #783ff3;
+  --color-violet-on-dark: #9d72fa;
+  --color-orange: #fa7e00;
+
+  /* Neutral palette (lightest to darkest) */
+  --color-neutral-0: #ffffff;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e0e0e0;
+  --color-neutral-300: #c2c2c2;
+  --color-neutral-400: #a8a8a8;
+  --color-neutral-500: #757575;
+  --color-neutral-600: #484848;
+  --color-neutral-700: #292929;
+  --color-neutral-800: #111111;
+
+  /* Spacing */
+  --space-0: 0px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-96: 96px;
+  --space-128: 128px;
+
+  /* Corner radius */
+  --radius-0: 0px;
+  --radius-2: 2px;
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-full: 9999px;
+}
