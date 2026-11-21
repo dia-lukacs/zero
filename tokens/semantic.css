@@ -1,0 +1,8 @@
+/* Semantic tokens
+ * Name a role, point at a primitive. Use these in components and pages;
+ * change the primitive they point at to restyle everywhere at once.
+ */
+
+:root {
+  --color-page-background: var(--color-powder);
+}

@@ -1,7 +1,7 @@
 /* Text styles
  * One token per style, in CSS `font` shorthand: weight size/line-height family
  * Use it as: font: var(--text-headline-large);
- * Letter spacing is not defined yet.
+ * Letter spacing is 0 for every style, which is the browser default, so there is no token for it.
  */
 
 :root {
