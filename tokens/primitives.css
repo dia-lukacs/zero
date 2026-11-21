@@ -23,27 +23,6 @@
   --color-neutral-700: #292929;
   --color-neutral-800: #111111;
 
-  /* Font families */
-  --font-family-inter: "Inter", system-ui, sans-serif;
-  --font-family-dm-mono: "DM Mono", ui-monospace, monospace;
-
-  /* Font weights */
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-
-  /* Font sizes */
-  --font-size-12: 12px;
-  --font-size-14: 14px;
-  --font-size-16: 16px;
-  --font-size-18: 18px;
-  --font-size-32: 32px;
-  --font-size-40: 40px;
-  --font-size-48: 48px;
-
-  /* Line heights (unitless, relative to font size) */
-  --line-height-120: 1.2;
-  --line-height-140: 1.4;
-
   /* Spacing */
   --space-0: 0px;
   --space-2: 2px;

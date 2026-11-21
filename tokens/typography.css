@@ -1,65 +1,24 @@
 /* Text styles
- * Each style is a complete set of four tokens:
- *   --text-<group>-<style>-family | -weight | -size | -line-height
- * Built from primitives only. Letter spacing is not defined yet.
+ * One token per style, in CSS `font` shorthand: weight size/line-height family
+ * Use it as: font: var(--text-headline-large);
+ * Letter spacing is not defined yet.
  */
 
 :root {
-  /* Heading: Inter Medium, 120% */
-  --text-heading-large-family: var(--font-family-inter);
-  --text-heading-large-weight: var(--font-weight-medium);
-  --text-heading-large-size: var(--font-size-48);
-  --text-heading-large-line-height: var(--line-height-120);
+  /* Headline: Inter Medium, line height 1.2 */
+  --text-headline-large: 500 48px/1.2 "Inter", sans-serif;
+  --text-headline-medium: 500 40px/1.2 "Inter", sans-serif;
+  --text-headline-small: 500 32px/1.2 "Inter", sans-serif;
 
-  --text-heading-medium-family: var(--font-family-inter);
-  --text-heading-medium-weight: var(--font-weight-medium);
-  --text-heading-medium-size: var(--font-size-40);
-  --text-heading-medium-line-height: var(--line-height-120);
+  /* Body: Inter, line height 1.4 */
+  --text-body-lead-regular: 400 18px/1.4 "Inter", sans-serif;
+  --text-body-lead-medium: 500 18px/1.4 "Inter", sans-serif;
+  --text-body-default-regular: 400 16px/1.4 "Inter", sans-serif;
+  --text-body-default-medium: 500 16px/1.4 "Inter", sans-serif;
+  --text-body-small-regular: 400 14px/1.4 "Inter", sans-serif;
+  --text-body-small-medium: 500 14px/1.4 "Inter", sans-serif;
 
-  --text-heading-small-family: var(--font-family-inter);
-  --text-heading-small-weight: var(--font-weight-medium);
-  --text-heading-small-size: var(--font-size-32);
-  --text-heading-small-line-height: var(--line-height-120);
-
-  /* Body: Inter, Regular and Medium, 140% */
-  --text-body-lead-regular-family: var(--font-family-inter);
-  --text-body-lead-regular-weight: var(--font-weight-regular);
-  --text-body-lead-regular-size: var(--font-size-18);
-  --text-body-lead-regular-line-height: var(--line-height-140);
-
-  --text-body-lead-medium-family: var(--font-family-inter);
-  --text-body-lead-medium-weight: var(--font-weight-medium);
-  --text-body-lead-medium-size: var(--font-size-18);
-  --text-body-lead-medium-line-height: var(--line-height-140);
-
-  --text-body-default-regular-family: var(--font-family-inter);
-  --text-body-default-regular-weight: var(--font-weight-regular);
-  --text-body-default-regular-size: var(--font-size-16);
-  --text-body-default-regular-line-height: var(--line-height-140);
-
-  --text-body-default-medium-family: var(--font-family-inter);
-  --text-body-default-medium-weight: var(--font-weight-medium);
-  --text-body-default-medium-size: var(--font-size-16);
-  --text-body-default-medium-line-height: var(--line-height-140);
-
-  --text-body-small-regular-family: var(--font-family-inter);
-  --text-body-small-regular-weight: var(--font-weight-regular);
-  --text-body-small-regular-size: var(--font-size-14);
-  --text-body-small-regular-line-height: var(--line-height-140);
-
-  --text-body-small-medium-family: var(--font-family-inter);
-  --text-body-small-medium-weight: var(--font-weight-medium);
-  --text-body-small-medium-size: var(--font-size-14);
-  --text-body-small-medium-line-height: var(--line-height-140);
-
-  /* Caption: DM Mono Regular, 140% */
-  --text-caption-default-family: var(--font-family-dm-mono);
-  --text-caption-default-weight: var(--font-weight-regular);
-  --text-caption-default-size: var(--font-size-14);
-  --text-caption-default-line-height: var(--line-height-140);
-
-  --text-caption-small-family: var(--font-family-dm-mono);
-  --text-caption-small-weight: var(--font-weight-regular);
-  --text-caption-small-size: var(--font-size-12);
-  --text-caption-small-line-height: var(--line-height-140);
+  /* Caption: DM Mono Regular, line height 1.4 */
+  --text-caption-default: 400 14px/1.4 "DM Mono", monospace;
+  --text-caption-small: 400 12px/1.4 "DM Mono", monospace;
 }
