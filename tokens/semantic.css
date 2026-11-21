@@ -4,14 +4,14 @@
  */
 
 :root {
-  --color-page-background: var(--color-powder);
+  /* Backgrounds */
+  --color-background-light: var(--color-powder);
   --color-background-dark: var(--color-night);
 
-  /* Text */
-  --color-text-primary: var(--color-neutral-800);
-  --color-text-secondary: var(--color-neutral-700);
-  --color-text-muted: var(--color-neutral-500);
-  --color-text-title: var(--color-night);
+  /* Text on light backgrounds */
+  --color-text-primary-on-light: var(--color-neutral-800);
+  --color-text-secondary-on-light: var(--color-neutral-700);
+  --color-text-muted-on-light: var(--color-neutral-500);
 
   /* Text on dark backgrounds */
   --color-text-primary-on-dark: var(--color-neutral-0);

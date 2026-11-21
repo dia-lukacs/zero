@@ -44,22 +44,23 @@ Do not:
 Use the color tokens for every background, text, border and fill. Reach for a role token first (backgrounds and text below). Use a brand or neutral color directly only when no role token fits.
 
 Backgrounds:
-- `--color-page-background`: the main page background, on light areas.
+- `--color-background-light`: the main page background, and any light area.
 - `--color-background-dark`: dark areas, such as a dark section or band.
 
-Text, on light backgrounds:
-- `--color-text-primary`: main text, such as headings and body copy.
-- `--color-text-secondary`: supporting text next to the main text.
-- `--color-text-muted`: the quietest text, such as hints, placeholders and fine print.
-- `--color-text-title`: the page title only (`--text-title`). It is the brand dark color, so use it for nothing else.
+Text, on light backgrounds (`--color-background-light`):
+- `--color-text-primary-on-light`: main text, such as the page title, headings and body copy.
+- `--color-text-secondary-on-light`: supporting text next to the main text.
+- `--color-text-muted-on-light`: the quietest text, such as hints, placeholders and fine print.
 
 Text, on dark backgrounds (`--color-background-dark`):
-- `--color-text-primary-on-dark`, `--color-text-secondary-on-dark` and `--color-text-muted-on-dark`: the same three levels. Always use these on dark, and never the light-background ones.
+- `--color-text-primary-on-dark`, `--color-text-secondary-on-dark` and `--color-text-muted-on-dark`: the same three levels.
+
+Always pick the text tokens that match the background they sit on.
 
 Brand colors:
-- `--color-powder`: the light page color. Use it through `--color-page-background`.
+- `--color-powder`: the light page color. Use it through `--color-background-light`.
 - `--color-alabaster`: a slightly darker surface on top of the page, such as panels, bands and quiet dividers.
-- `--color-night`: the dark color. Use it through `--color-background-dark` for dark areas and `--color-text-title` for the page title.
+- `--color-night`: the dark color. Use it through `--color-background-dark`.
 - `--color-violet`: the main accent, for primary actions, links and key highlights.
 - `--color-orange`: a second accent, used sparingly for small highlights.
 
