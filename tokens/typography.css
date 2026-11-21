@@ -5,6 +5,9 @@
  */
 
 :root {
+  /* Title: Anton, sized to the screen width so the word spans the page, line height 0.85 */
+  --text-title: 400 26vw/0.85 "Anton", sans-serif;
+
   /* Headline: Inter Medium, line height 1.2 */
   --text-headline-large: 500 48px/1.2 "Inter", sans-serif;
   --text-headline-medium: 500 40px/1.2 "Inter", sans-serif;

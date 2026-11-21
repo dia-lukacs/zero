@@ -51,6 +51,7 @@ Text, on light backgrounds:
 - `--color-text-primary`: main text, such as headings and body copy.
 - `--color-text-secondary`: supporting text next to the main text.
 - `--color-text-muted`: the quietest text, such as hints, placeholders and fine print.
+- `--color-text-title`: the page title only (`--text-title`). It is the brand dark color, so use it for nothing else.
 
 Text, on dark backgrounds (`--color-background-dark`):
 - `--color-text-primary-on-dark`, `--color-text-secondary-on-dark` and `--color-text-muted-on-dark`: the same three levels. Always use these on dark, and never the light-background ones.
@@ -58,7 +59,7 @@ Text, on dark backgrounds (`--color-background-dark`):
 Brand colors:
 - `--color-powder`: the light page color. Use it through `--color-page-background`.
 - `--color-alabaster`: a slightly darker surface on top of the page, such as panels, bands and quiet dividers.
-- `--color-night`: the dark color. Use it through `--color-background-dark`.
+- `--color-night`: the dark color. Use it through `--color-background-dark` for dark areas and `--color-text-title` for the page title.
 - `--color-violet`: the main accent, for primary actions, links and key highlights.
 - `--color-orange`: a second accent, used sparingly for small highlights.
 
@@ -79,6 +80,9 @@ Do not:
 ## Typography
 
 Every piece of text uses one text style. Each style is a single token holding the font, weight, size and line height together, so apply it as a whole with the `font` property, for example `font: var(--text-headline-large)`. Do not set the font family, weight, size or line height separately.
+
+Title (`--text-title`):
+- The one huge word at the top of the page, set so its letters reach both edges of the screen. Use it once per page, for the page's name only, and never for headings or running text.
 
 Headlines (`--text-headline-large`, `--text-headline-medium` and `--text-headline-small`):
 - For titles and section headings. Pick the size by how important the heading is: large for the main title of a page, medium for major sections, small for sub-sections.
