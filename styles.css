@@ -44,6 +44,29 @@ body {
   color: var(--color-text-primary-on-light);
 }
 
+/* A short line of body text on the right, a little lower than the English
+ * title on the left, so the two don't line up. */
+.page__body {
+  position: absolute;
+  top: 58%;
+  right: 0;
+  margin: 0;
+  padding-inline: var(--space-24);
+  max-width: 10em;
+  font: var(--text-body-lead-regular);
+  color: var(--color-text-primary-on-light);
+}
+
+/* Below the first screen: the date picker, off to the left. */
+.date-section {
+  padding: var(--space-96) var(--space-24);
+}
+
+/* The dark version of the picker, on the dark background. */
+.date-section--dark {
+  background: var(--color-background-dark);
+}
+
 /* Paper grain
  * A very faint noise layer over the whole page, so flat color feels like
  * textured paper. It sits on top, ignores clicks, and is generated in code

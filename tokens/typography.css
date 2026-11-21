@@ -22,6 +22,7 @@
   --text-body-small-medium: 500 14px/1.4 "Inter", sans-serif;
 
   /* Caption: DM Mono Regular, line height 1.4 */
+  --text-caption-large: 400 16px/1.4 "DM Mono", monospace;
   --text-caption-default: 400 14px/1.4 "DM Mono", monospace;
   --text-caption-small: 400 12px/1.4 "DM Mono", monospace;
 }

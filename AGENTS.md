@@ -96,6 +96,7 @@ Body (`--text-body-lead-regular`, `--text-body-lead-medium`, `--text-body-defaul
 
 Caption (`--text-caption-default` and `--text-caption-small`):
 - For metadata and short technical details, such as dates, tags, codes and figure labels. Keep it short; it is not for paragraphs.
+- `--text-caption-large` is for the values in a rolling list, such as the year and month in the date picker.
 
 Do not:
 - Write raw font families, sizes, weights or line heights. If no style fits, choose the closest one.

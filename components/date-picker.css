@@ -1,0 +1,153 @@
+/* Date picker
+ * Two columns, year and month (written out), each a tube seen from the side.
+ * The selected value faces you in dark; the values before and after curve away
+ * above and below it, smaller and fainter. Two triangles beside the year roll
+ * its tube. When the year rolls, the month tube spins one full turn.
+ * The light version is the main one. Add the class "date-picker--dark" for a
+ * dark background. Uses only tokens: the caption text style, the text colors
+ * and the spacing scale.
+ */
+
+/* A row's angle around its tube. Registered as an angle so it can be animated,
+   which lets the row's brightness follow the turn all the way round. */
+@property --date-picker-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.date-picker {
+  --date-picker-text: var(--color-text-muted-on-light);
+  --date-picker-selected: var(--color-text-primary-on-light);
+  --date-picker-rows: 7; /* tall enough for the selected row plus three on each side */
+
+  /* Both tubes share one radius and one angle between rows (22.5 degrees), so they
+     are exactly the same height. The radius makes neighbouring rows meet at that
+     angle for a 1.4 line height. */
+  --date-picker-radius: 3.6em;
+
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--space-32);
+  font: var(--text-caption-large);
+  color: var(--date-picker-text);
+}
+
+.date-picker--dark {
+  --date-picker-text: var(--color-text-muted-on-dark);
+  --date-picker-selected: var(--color-text-primary-on-dark);
+}
+
+.date-picker__column {
+  position: relative;
+  inline-size: var(--date-picker-width);
+  block-size: calc(var(--date-picker-rows) * 1.4em);
+}
+
+/* Wide enough for the longest value (the characters are all the same width). */
+.date-picker__column--year {
+  --date-picker-width: 4ch;
+  margin-inline-start: var(--space-24); /* room for the triangles */
+}
+
+.date-picker__column--month {
+  --date-picker-width: 9ch;
+}
+
+/* Looking at the tube: things farther back look smaller. */
+.date-picker__tube {
+  position: absolute;
+  inset: 0;
+  perspective: 26em;
+  perspective-origin: 0 50%;
+}
+
+.date-picker__row {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 50%;
+  white-space: nowrap;
+  /* Facing you is fully visible; turning away fades out; the back is hidden. */
+  opacity: calc(max(0, cos(var(--date-picker-angle))) * max(0, cos(var(--date-picker-angle))));
+  /* Move to the middle, step back to the tube's axis, turn, then come forward to its surface. */
+  transform:
+    translateY(-50%)
+    translateZ(calc(-1 * var(--date-picker-radius)))
+    rotateX(var(--date-picker-angle))
+    translateZ(var(--date-picker-radius));
+  transition:
+    --date-picker-angle 0.7s cubic-bezier(0.3, 0.6, 0.2, 1),
+    color 0.3s ease;
+}
+
+.date-picker__row.is-selected {
+  color: var(--date-picker-selected);
+}
+
+/* A small triangle beside the year, just above or below the selected row.
+   The top one rolls back a year, the bottom one rolls forward. */
+.date-picker__arrow {
+  appearance: none;
+  position: absolute;
+  inset-inline-start: calc(-1 * var(--space-24));
+  inset-block-start: 50%;
+  inline-size: var(--space-16);
+  block-size: var(--space-12);
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* The triangle is drawn on an inner layer, so the button's own box stays whole
+   and its focus outline isn't cut off by the triangle's shape. */
+.date-picker__arrow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--date-picker-selected);
+}
+
+.date-picker__arrow--previous {
+  margin-block-start: calc(-1 * (var(--space-12) + var(--space-12)));
+}
+
+.date-picker__arrow--previous::before {
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.date-picker__arrow--next {
+  margin-block-start: var(--space-12);
+}
+
+.date-picker__arrow--next::before {
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.date-picker__arrow:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.date-picker__arrow:focus-visible {
+  outline: 2px solid var(--date-picker-selected);
+  outline-offset: var(--space-2);
+}
+
+/* Read aloud to screen readers, not shown. */
+.date-picker__readout {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .date-picker__row {
+    transition: none;
+  }
+}
