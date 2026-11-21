@@ -6,7 +6,7 @@ This repository keeps its design contract in Grum, and some of its team use codi
 
 ## Spacing
 
-Use the spacing tokens (`--space-*`) for every margin, padding and gap. Pick the token that fits the job; closer things get smaller spacing, looser things get larger.
+Use the spacing tokens, from `--space-0` up to `--space-128`, for every margin, padding and gap. Pick the token that fits the job; closer things get smaller spacing, looser things get larger.
 
 - `--space-0`: when you mean "no space", use this instead of a bare zero.
 - `--space-2` and `--space-4`: tiny nudges, such as an icon next to its label or tightly packed inline items.
