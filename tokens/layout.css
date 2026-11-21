@@ -4,28 +4,46 @@
  * would be too narrow to use. The space around and between the columns grows
  * with the screen.
  * Built from the spacing scale only.
+ *
+ * Every size has its own token, so all the values are written down here. The
+ * three tokens at the bottom (--grid-columns, --grid-margin, --grid-gap) are the
+ * ones the page actually uses; they pick the right size for the screen.
  */
 
 :root {
-  /* Phone: 2 columns, tight. */
-  --grid-columns: 2;
-  --grid-margin: var(--space-16); /* space at the left and right edge of the page */
-  --grid-gap: var(--space-8); /* space between columns, and between rows */
+  /* Columns */
+  --grid-columns-phone: 2;
+  --grid-columns-tablet: 4;
+
+  /* Space at the left and right edge of the page */
+  --grid-margin-phone: var(--space-16);
+  --grid-margin-tablet: var(--space-24);
+  --grid-margin-laptop: var(--space-32);
+
+  /* Space between columns, and between rows */
+  --grid-gap-phone: var(--space-8);
+  --grid-gap-tablet: var(--space-16);
+  --grid-gap-laptop: var(--space-24);
+
+  /* In use: the phone sizes to start with. The rules below switch them as the screen grows. */
+  --grid-columns: var(--grid-columns-phone);
+  --grid-margin: var(--grid-margin-phone);
+  --grid-gap: var(--grid-gap-phone);
 }
 
 /* Tablet: the full 4 columns. */
 @media (min-width: 640px) {
   :root {
-    --grid-columns: 4;
-    --grid-margin: var(--space-24);
-    --grid-gap: var(--space-16);
+    --grid-columns: var(--grid-columns-tablet);
+    --grid-margin: var(--grid-margin-tablet);
+    --grid-gap: var(--grid-gap-tablet);
   }
 }
 
 /* Laptop and bigger */
 @media (min-width: 1024px) {
   :root {
-    --grid-margin: var(--space-32);
-    --grid-gap: var(--space-24);
+    --grid-margin: var(--grid-margin-laptop);
+    --grid-gap: var(--grid-gap-laptop);
   }
 }

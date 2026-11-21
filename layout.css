@@ -34,10 +34,12 @@
   grid-row: var(--row, auto) / span var(--rows, 1);
 }
 
-/* Helper for things placed on the grid by hand, such as text laid over the page:
-   where column N starts, measured from the left edge of the page. Use it as
-   left: var(--grid-column-start-1) and so on. */
-:root {
+/* Helpers for things placed on the grid by hand, such as text laid over the page:
+   where column N starts, measured from the left edge of the page. Use them as
+   left: var(--grid-column-start-1) and so on.
+   These are working-out formulas, not design decisions, so they sit on the page
+   and not with the layout tokens. The numbers behind them are in the layout tokens. */
+body {
   --grid-column-width: calc(
     (100% - 2 * var(--grid-margin) - (var(--grid-columns) - 1) * var(--grid-gap)) / var(--grid-columns)
   );

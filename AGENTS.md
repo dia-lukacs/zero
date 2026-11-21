@@ -111,18 +111,18 @@ Do not:
 
 The page grid comes from the diploma book: equal columns, and every cell is a square, because each row is as tall as a column is wide. It has four columns on a tablet and bigger, and two columns on a phone, where four would be too narrow to use. The space around and between the columns also grows as the screen gets bigger.
 
-Tokens:
-- `--grid-columns`: how many columns there are: two on a phone, four on a tablet and bigger.
-- `--grid-margin`: the space between the page edge and the first and last column. It grows as the screen gets bigger.
-- `--grid-gap`: the space between columns and between rows. It also grows as the screen gets bigger.
-- `--grid-column-start-1`, `--grid-column-start-2`, `--grid-column-start-3` and `--grid-column-start-4`: where each column starts, measured from the left edge of the page. They are for text or objects placed over the page by hand. Columns three and four exist only where the grid has four columns.
-- `--grid-column-start-last`: where the last column starts, whatever the number of columns is. Use it for things that sit at the right, so they stay on the page on a phone.
-- `--grid-column-width`: how wide one column is.
-- The margin and the gap are built from the spacing scale: `--space-16` and `--space-8` on a phone, `--space-24` and `--space-16` on a tablet, and `--space-32` and `--space-24` on a laptop or bigger.
+Tokens. Every screen size has its own token, so each value is written down:
+- Columns: `--grid-columns-phone` (two) and `--grid-columns-tablet` (four, also used on laptops and bigger).
+- Page margin, the space between the page edge and the first and last column: `--grid-margin-phone`, `--grid-margin-tablet` and `--grid-margin-laptop`. It grows as the screen gets bigger.
+- Gap, the space between columns and between rows: `--grid-gap-phone`, `--grid-gap-tablet` and `--grid-gap-laptop`. It also grows as the screen gets bigger.
+- `--grid-columns`, `--grid-margin` and `--grid-gap` are the ones the page actually uses. They pick the right size for the screen, so use these in layout code and not the sized ones.
+- The margins and gaps are built from the spacing scale: `--space-16` and `--space-8` on a phone, `--space-24` and `--space-16` on a tablet, and `--space-32` and `--space-24` on a laptop or bigger.
+
+Placing things by hand: the layout styles also give helpers that work out where each column starts, measured from the left edge of the page: one for each of the four columns, and one for the last column, whatever the number of columns is. They are working-out formulas and not design tokens, so they are not listed here.
 
 How to use it:
 - Put content in the grid frame and the grid. Each item says where it starts and how many columns it covers. Items are placed on whole columns and whole square rows.
-- For text or objects placed over the page, start them at one of the column start tokens, so their left edge sits on a column line.
+- For text or objects placed over the page, start them at one of the column start helpers, so their left edge sits on a column line. Things that sit at the right use the last-column helper, so they stay on the page on a phone.
 - Keep text inside its columns. On a phone, a block that is two columns wide on a tablet becomes one column wide.
 - The page title is the one exception: its letters run edge to edge, across the margins.
 - Press G while building to see the columns and square cells over the page. Adding the grid switch to the address shows it from the start.
