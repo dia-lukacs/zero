@@ -63,3 +63,26 @@ Do not:
 - Use the accents for long body text. They are for emphasis.
 - Use light neutrals (`--color-neutral-300` and `--color-neutral-400`) for text people need to read.
 - Use a neutral to imitate a brand color, or a brand color to show a muted or disabled state.
+
+## Typography
+
+Every piece of text uses one text style. Each style is a single token holding the font, weight, size and line height together, so apply it as a whole with the `font` property, for example `font: var(--text-headline-large)`. Do not set the font family, weight, size or line height separately.
+
+Headlines (`--text-headline-large`, `--text-headline-medium` and `--text-headline-small`):
+- For titles and section headings. Pick the size by how important the heading is: large for the main title of a page, medium for major sections, small for sub-sections.
+
+Body (`--text-body-lead-regular`, `--text-body-lead-medium`, `--text-body-default-regular`, `--text-body-default-medium`, `--text-body-small-regular` and `--text-body-small-medium`):
+- `lead`: the intro paragraph under a headline, or any text that should stand out from the rest.
+- `default`: normal paragraphs and most interface text.
+- `small`: secondary or supporting text, such as notes and short descriptions.
+- Use `regular` for reading and `medium` for emphasis, such as labels and button text.
+
+Caption (`--text-caption-default` and `--text-caption-small`):
+- For metadata and short technical details, such as dates, tags, codes and figure labels. Keep it short; it is not for paragraphs.
+
+Do not:
+- Write raw font families, sizes, weights or line heights. If no style fits, choose the closest one.
+- Pick a headline style because of its size. Choose it by the heading's role, and keep the order logical.
+- Use a headline style for body text, or a body style for a heading.
+- Use bold or italic to create emphasis. Use the `medium` body style instead.
+- Add letter spacing. All styles are set without it.
