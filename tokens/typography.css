@@ -1,30 +1,65 @@
 /* Text styles
- * Built from primitives only. Each style = family + size + weight + line height.
- * Letter spacing is not defined yet.
+ * Each style is a complete set of four tokens:
+ *   --text-<group>-<style>-family | -weight | -size | -line-height
+ * Built from primitives only. Letter spacing is not defined yet.
  */
 
 :root {
-  /* Headings: Inter Medium */
-  --text-heading-family: var(--font-family-inter);
-  --text-heading-weight: var(--font-weight-medium);
-  --text-heading-line-height: var(--line-height-120);
+  /* Heading: Inter Medium, 120% */
+  --text-heading-large-family: var(--font-family-inter);
+  --text-heading-large-weight: var(--font-weight-medium);
   --text-heading-large-size: var(--font-size-48);
+  --text-heading-large-line-height: var(--line-height-120);
+
+  --text-heading-medium-family: var(--font-family-inter);
+  --text-heading-medium-weight: var(--font-weight-medium);
   --text-heading-medium-size: var(--font-size-40);
+  --text-heading-medium-line-height: var(--line-height-120);
+
+  --text-heading-small-family: var(--font-family-inter);
+  --text-heading-small-weight: var(--font-weight-medium);
   --text-heading-small-size: var(--font-size-32);
+  --text-heading-small-line-height: var(--line-height-120);
 
-  /* Body: Inter, Regular or Medium */
-  --text-body-family: var(--font-family-inter);
-  --text-body-line-height: var(--line-height-140);
-  --text-body-weight-regular: var(--font-weight-regular);
-  --text-body-weight-medium: var(--font-weight-medium);
-  --text-body-lead-size: var(--font-size-18);
-  --text-body-default-size: var(--font-size-16);
-  --text-body-small-size: var(--font-size-14);
+  /* Body: Inter, Regular and Medium, 140% */
+  --text-body-lead-regular-family: var(--font-family-inter);
+  --text-body-lead-regular-weight: var(--font-weight-regular);
+  --text-body-lead-regular-size: var(--font-size-18);
+  --text-body-lead-regular-line-height: var(--line-height-140);
 
-  /* Caption: DM Mono Regular */
-  --text-caption-family: var(--font-family-dm-mono);
-  --text-caption-weight: var(--font-weight-regular);
-  --text-caption-line-height: var(--line-height-140);
+  --text-body-lead-medium-family: var(--font-family-inter);
+  --text-body-lead-medium-weight: var(--font-weight-medium);
+  --text-body-lead-medium-size: var(--font-size-18);
+  --text-body-lead-medium-line-height: var(--line-height-140);
+
+  --text-body-default-regular-family: var(--font-family-inter);
+  --text-body-default-regular-weight: var(--font-weight-regular);
+  --text-body-default-regular-size: var(--font-size-16);
+  --text-body-default-regular-line-height: var(--line-height-140);
+
+  --text-body-default-medium-family: var(--font-family-inter);
+  --text-body-default-medium-weight: var(--font-weight-medium);
+  --text-body-default-medium-size: var(--font-size-16);
+  --text-body-default-medium-line-height: var(--line-height-140);
+
+  --text-body-small-regular-family: var(--font-family-inter);
+  --text-body-small-regular-weight: var(--font-weight-regular);
+  --text-body-small-regular-size: var(--font-size-14);
+  --text-body-small-regular-line-height: var(--line-height-140);
+
+  --text-body-small-medium-family: var(--font-family-inter);
+  --text-body-small-medium-weight: var(--font-weight-medium);
+  --text-body-small-medium-size: var(--font-size-14);
+  --text-body-small-medium-line-height: var(--line-height-140);
+
+  /* Caption: DM Mono Regular, 140% */
+  --text-caption-default-family: var(--font-family-dm-mono);
+  --text-caption-default-weight: var(--font-weight-regular);
   --text-caption-default-size: var(--font-size-14);
+  --text-caption-default-line-height: var(--line-height-140);
+
+  --text-caption-small-family: var(--font-family-dm-mono);
+  --text-caption-small-weight: var(--font-weight-regular);
   --text-caption-small-size: var(--font-size-12);
+  --text-caption-small-line-height: var(--line-height-140);
 }
