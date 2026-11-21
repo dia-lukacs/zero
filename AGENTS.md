@@ -41,12 +41,24 @@ Do not:
 
 ## Colors
 
-Use the color tokens for every background, text, border and fill. Brand colors carry the identity; the neutral scale does the supporting work.
+Use the color tokens for every background, text, border and fill. Reach for a role token first (backgrounds and text below). Use a brand or neutral color directly only when no role token fits.
+
+Backgrounds:
+- `--color-page-background`: the main page background, on light areas.
+- `--color-background-dark`: dark areas, such as a dark section or band.
+
+Text, on light backgrounds:
+- `--color-text-primary`: main text, such as headings and body copy.
+- `--color-text-secondary`: supporting text next to the main text.
+- `--color-text-muted`: the quietest text, such as hints, placeholders and fine print.
+
+Text, on dark backgrounds (`--color-background-dark`):
+- `--color-text-primary-on-dark`, `--color-text-secondary-on-dark` and `--color-text-muted-on-dark`: the same three levels. Always use these on dark, and never the light-background ones.
 
 Brand colors:
-- `--color-powder`: the main page background.
+- `--color-powder`: the light page color. Use it through `--color-page-background`.
 - `--color-alabaster`: a slightly darker surface on top of the page, such as panels, bands and quiet dividers.
-- `--color-night`: main text and dark surfaces.
+- `--color-night`: the dark color. Use it through `--color-background-dark`.
 - `--color-violet`: the main accent, for primary actions, links and key highlights.
 - `--color-orange`: a second accent, used sparingly for small highlights.
 
@@ -54,11 +66,11 @@ Neutral scale, from lightest to darkest:
 - `--color-neutral-0`: pure white surfaces, such as a card or input on the page background.
 - `--color-neutral-100` and `--color-neutral-200`: subtle fills and light borders.
 - `--color-neutral-300` and `--color-neutral-400`: stronger borders, icons and disabled states.
-- `--color-neutral-500`: secondary text, such as hints and placeholders.
-- `--color-neutral-600`, `--color-neutral-700` and `--color-neutral-800`: strong secondary text and dark UI surfaces, getting darker with each step.
+- `--color-neutral-500`, `--color-neutral-600`, `--color-neutral-700` and `--color-neutral-800`: the dark end of the scale. The text tokens use these, so for text, pick a text token and not a neutral.
 
 Do not:
 - Write a raw hex, RGB or HSL value. If no token fits, choose the nearest one.
+- Use the light-background text tokens on a dark background, or the on-dark ones on a light background.
 - Use `--color-violet` and `--color-orange` side by side in the same component. One accent per component.
 - Use the accents for long body text. They are for emphasis.
 - Use light neutrals (`--color-neutral-300` and `--color-neutral-400`) for text people need to read.

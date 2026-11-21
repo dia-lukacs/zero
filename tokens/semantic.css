@@ -5,4 +5,15 @@
 
 :root {
   --color-page-background: var(--color-powder);
+  --color-background-dark: var(--color-night);
+
+  /* Text */
+  --color-text-primary: var(--color-neutral-800);
+  --color-text-secondary: var(--color-neutral-700);
+  --color-text-muted: var(--color-neutral-500);
+
+  /* Text on dark backgrounds */
+  --color-text-primary-on-dark: var(--color-neutral-0);
+  --color-text-secondary-on-dark: var(--color-neutral-100);
+  --color-text-muted-on-dark: var(--color-neutral-300);
 }
