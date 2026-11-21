@@ -8,9 +8,16 @@
   /* Brand colors */
   --color-powder: #fbfaf4;
   --color-alabaster: #eaebe4;
-  --color-night: #111111;
-  --color-violet: #783ff3;
-  --color-orange: #fa7e00;
+  --color-charcoal: #1b1b1d;
+
+  /* Accent colors, taken from the diploma */
+  --color-teal: #22b8a1;
+  --color-cobalt: #2158a3;
+  --color-yellow: #f9be4e;
+  --color-coral: #ef7b5e;
+  --color-tape-orange: #e66f48;
+  --color-magenta: #bd2e72;
+  --color-red: #d65153;
 
   /* Neutral palette (lightest to darkest) */
   --color-neutral-0: #ffffff;

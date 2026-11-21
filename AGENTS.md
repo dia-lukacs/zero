@@ -60,9 +60,11 @@ Always pick the text tokens that match the background they sit on.
 Brand colors:
 - `--color-powder`: the light page color. Use it through `--color-background-light`.
 - `--color-alabaster`: a slightly darker surface on top of the page, such as panels, bands and quiet dividers.
-- `--color-night`: the dark color. Use it through `--color-background-dark`.
-- `--color-violet`: the main accent, for primary actions, links and key highlights.
-- `--color-orange`: a second accent, used sparingly for small highlights.
+- `--color-charcoal`: the dark color. Use it through `--color-background-dark`.
+
+Accent colors, taken from the diploma: `--color-teal`, `--color-cobalt`, `--color-yellow`, `--color-coral`, `--color-tape-orange`, `--color-magenta` and `--color-red`.
+- They are for emphasis, such as highlights, markers and small touches of color, and they appear one at a time instead of all at once.
+- Use them through a role token once one exists for the job. Until then, pick the accent that fits the moment of the story.
 
 Neutral scale, from lightest to darkest:
 - `--color-neutral-0`: pure white surfaces, such as a card or input on the page background.
@@ -73,7 +75,7 @@ Neutral scale, from lightest to darkest:
 Do not:
 - Write a raw hex, RGB or HSL value. If no token fits, choose the nearest one.
 - Use the light-background text tokens on a dark background, or the on-dark ones on a light background.
-- Use `--color-violet` and `--color-orange` side by side in the same component. One accent per component.
+- Put several accent colors side by side in the same component. One accent per component.
 - Use the accents for long body text. They are for emphasis.
 - Use light neutrals (`--color-neutral-300` and `--color-neutral-400`) for text people need to read.
 - Use a neutral to imitate a brand color, or a brand color to show a muted or disabled state.

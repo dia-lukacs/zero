@@ -6,7 +6,7 @@
 :root {
   /* Backgrounds */
   --color-background-light: var(--color-powder);
-  --color-background-dark: var(--color-night);
+  --color-background-dark: var(--color-charcoal);
 
   /* Text on light backgrounds */
   --color-text-primary-on-light: var(--color-neutral-800);
