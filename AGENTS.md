@@ -62,7 +62,7 @@ Brand colors:
 - `--color-alabaster`: a slightly darker surface on top of the page, such as panels, bands and quiet dividers.
 - `--color-charcoal`: the dark color. Use it through `--color-background-dark`.
 
-Accent colors, taken from the diploma: `--color-teal`, `--color-cobalt`, `--color-yellow`, `--color-coral`, `--color-tape-orange`, `--color-magenta` and `--color-red`.
+Accent colors, taken from the diploma: `--color-teal`, `--color-cobalt`, `--color-yellow`, `--color-coral`, `--color-orange`, `--color-magenta` and `--color-red`.
 - They are for emphasis, such as highlights, markers and small touches of color, and they appear one at a time instead of all at once.
 - Use them through a role token once one exists for the job. Until then, pick the accent that fits the moment of the story.
 
