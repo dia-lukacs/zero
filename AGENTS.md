@@ -104,3 +104,33 @@ Do not:
 - Use a headline style for body text, or a body style for a heading.
 - Use bold or italic to create emphasis. Use the `medium` body style instead.
 - Add letter spacing. All styles are set without it.
+
+## Date picker
+
+The date picker is how a visitor moves through the years of the story. It shows a year and a month, written out, as two side-by-side tubes seen from the side: the selected value faces the visitor, and the values before and after curve away above and below it, smaller and fainter. Use it to choose a point in time, and never for anything that is not a date.
+
+How it behaves:
+- Only the year has arrows. Two small triangles beside it roll its tube back or forward one year at a time. The month has no arrows.
+- When the year rolls, the month tube spins one full turn and lands on the same month, so the two read as gears turning together.
+- The month wraps around: December sits above January. The year stops at its first and last year, and the arrow that would go past either end is dimmed.
+- Every change of year sends a date-change event with the month and the year, so the rest of the page can react.
+- The triangles are real buttons: they can be reached with the keyboard, show a clear outline when focused, and have text labels such as "Previous year" and "Next year". The chosen date is also read aloud as text.
+
+Versions:
+- The light version is the main one. It sits on `--color-background-light`.
+- The dark version is for dark areas and sits on `--color-background-dark`. It is the same picker with its dark variant switched on.
+- Pick the version by the background it sits on, and never mix them.
+
+Tokens it uses:
+- Text: every value uses `--text-caption-large`.
+- Color on light: `--color-text-muted-on-light` for the neighbouring values, and `--color-text-primary-on-light` for the selected value, the triangles and the focus outline.
+- Color on dark: `--color-text-muted-on-dark` for the neighbouring values, and `--color-text-primary-on-dark` for the selected value, the triangles and the focus outline.
+- Spacing: `--space-32` between the year and the month, `--space-24` for the room on the left of the year that holds the triangles, `--space-16` and `--space-12` for the width and height of a triangle, `--space-12` for how far a triangle sits above or below the selected value, and `--space-2` between a triangle and its focus outline.
+
+Do not:
+- Add arrows to the month, or make the month turn on its own. It only turns with the year.
+- Show a column of years that are not in the story. The year range is set by the page.
+- Use other text styles, colors or spacing for the values or the triangles. The tubes only look right with the tokens above.
+- Hide the focus outline, remove the triangle labels, or turn the picker into something that only works with a mouse.
+- Put the light version on a dark background, or the dark version on a light one.
+- Leave the animation on for people who ask for less motion. It must switch off for them, and the values must still change.
