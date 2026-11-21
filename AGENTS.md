@@ -21,3 +21,45 @@ Do not:
 - Invent in-between values by adding or multiplying tokens.
 - Use spacing tokens for widths, heights, font sizes or corner radius. Those have their own tokens.
 - Mix scales in one place. Inside a single component, keep to the small tokens; keep the large ones for the page layout.
+
+## Radius
+
+Use the radius tokens, from `--radius-0` up to `--radius-24`, plus `--radius-full`, for every rounded corner. Bigger things get rounder corners than smaller things.
+
+- `--radius-0`: sharp, square corners, when you mean it, such as a bar or image that runs edge to edge.
+- `--radius-2` and `--radius-4`: small elements that need only a slight softening, such as tags and badges.
+- `--radius-8` and `--radius-12`: everyday controls and small containers, such as buttons, inputs and menus.
+- `--radius-16`, `--radius-20` and `--radius-24`: large containers, such as cards, panels, dialogs and big images.
+- `--radius-full`: pills, avatars and round icon buttons, where the ends are fully rounded.
+
+Do not:
+- Write a raw pixel value for a corner. If no token fits, choose the nearest one.
+- Give elements of the same kind different radii. All buttons share one, all cards share one.
+- Round an inner element as much as or more than the container around it. Nested corners should step down.
+- Use `--radius-full` on a large box. It is for small, pill-shaped or circular things.
+- Use radius tokens for spacing, sizes or borders.
+
+## Colors
+
+Use the color tokens for every background, text, border and fill. Brand colors carry the identity; the neutral scale does the supporting work.
+
+Brand colors:
+- `--color-powder`: the main page background.
+- `--color-alabaster`: a slightly darker surface on top of the page, such as panels, bands and quiet dividers.
+- `--color-night`: main text and dark surfaces.
+- `--color-violet`: the main accent, for primary actions, links and key highlights.
+- `--color-orange`: a second accent, used sparingly for small highlights.
+
+Neutral scale, from lightest to darkest:
+- `--color-neutral-0`: pure white surfaces, such as a card or input on the page background.
+- `--color-neutral-100` and `--color-neutral-200`: subtle fills and light borders.
+- `--color-neutral-300` and `--color-neutral-400`: stronger borders, icons and disabled states.
+- `--color-neutral-500`: secondary text, such as hints and placeholders.
+- `--color-neutral-600`, `--color-neutral-700` and `--color-neutral-800`: strong secondary text and dark UI surfaces, getting darker with each step.
+
+Do not:
+- Write a raw hex, RGB or HSL value. If no token fits, choose the nearest one.
+- Use `--color-violet` and `--color-orange` side by side in the same component. One accent per component.
+- Use the accents for long body text. They are for emphasis.
+- Use light neutrals (`--color-neutral-300` and `--color-neutral-400`) for text people need to read.
+- Use a neutral to imitate a brand color, or a brand color to show a muted or disabled state.
